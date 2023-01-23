@@ -8,12 +8,13 @@ const braintreeRoutes = require("./routes/braintree");
 const orderRoutes = require("./routes/order");
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
+const expressValidator = require('express-validator')
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
-const expressValidator = require('express-validator')
 require('dotenv').config()
 const mongoose = require('mongoose')
 
+mongoose.set("runValidators", true);
 mongoose.connect(process.env.MONGO_URI,{useNewUrlParser:true})
     .then(()=>console.log('DB connected'))
 

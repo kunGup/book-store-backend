@@ -26,6 +26,7 @@ const productSchema = mongoose.Schema(
     },
     quantity: {
       type: Number,
+      min: [0,'Not much product']
     },
     sold: {
       type: Number,
